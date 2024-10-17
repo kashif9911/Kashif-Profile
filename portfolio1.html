@@ -23,10 +23,63 @@
 		<![endif]-->
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,700%7CRaleway:700' rel='stylesheet' type='text/css'>
         <script src="js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
-   
+
+	    <!-- start -->
+	    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Pop-up Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        img {
+            width: 150px;
+            cursor: pointer;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+        }
+        details {
+            position: relative;
+        }
+        summary {
+            list-style: none;
+            cursor: pointer;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+        details[open] .modal {
+            display: flex;
+        }
+        .modal img {
+            width: 80%;
+            max-width: 600px;
+            border: 5px solid white;
+        }
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+
+	    <!-- 	    END -->
 </head>
-    </head>
-    <body>
+     <body>
     	<div class="loader">
     		<div class="spinner">
 			  <div class="double-bounce1"></div>
@@ -73,7 +126,34 @@
 	
 					<div class="container">
 						<div class="projects-container column-projects">
-					
+
+
+<!-- 	Here -->
+							<details>
+						    <summary><img src="Project_1.png" alt="Image 1"></summary>
+						    <div class="modal">
+						        <span class="close" onclick="this.parentElement.parentElement.removeAttribute('open')">&times;</span>
+						        <img src="Project_1.png" alt="Image 1">
+						    </div>
+						</details>
+						
+						<details>
+						    <summary><img src="image2.jpg" alt="Project_2.png"></summary>
+						    <div class="modal">
+						        <span class="close" onclick="this.parentElement.parentElement.removeAttribute('open')">&times;</span>
+						        <img src="Project_2.png" alt="Image 2">
+						    </div>
+						</details>
+						
+						<details>
+						    <summary><img src="Project_3.png" alt="Image 3"></summary>
+						    <div class="modal">
+						        <span class="close" onclick="this.parentElement.parentElement.removeAttribute('open')">&times;</span>
+						        <img src="Project_3.png" alt="Image 3">
+						    </div>
+						</details>
+
+<!-- UNTIL -->
 							<div class="col-sm-2 col-sm-2 project print image-holder">
 								<div class="background-image-holder">
 									<img class="background-image" alt="Background Image" src="Images/Project_1.png">
